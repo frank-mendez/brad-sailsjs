@@ -1,0 +1,25 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/articles/list">Articles</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
+<form method="post" action="/articles/update">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      value="<%= article.title %>"
+      name="title"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Body</label>
+    <textarea class="form-control" name="body" rows="3">
+<%= article.body %></textarea
+    >
+  </div>
+  <input type="hidden" value="<%= article.id %>" name="id" />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
